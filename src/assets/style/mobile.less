@@ -1,0 +1,26 @@
+/* 移动端适配样式 */
+
+// 常用断点
+@screen-xs: 480px; // 超小屏幕手机
+@screen-sm: 576px; // 小屏幕手机
+@screen-md: 768px; // 平板
+@screen-lg: 992px; // 小桌面显示器
+@screen-xl: 1200px; // 中等桌面显示器
+@screen-xxl: 1600px; // 大桌面显示器
+
+// 移动优先媒体查询
+.mobile-style() {
+  // 默认样式适用于小屏幕设备
+
+  // 平板及以上
+  @media (min-width: @screen-md) {}
+
+  // 小屏幕手机及以下
+  @media (max-width: @screen-sm) {}
+
+  // 极小屏幕
+  @media (max-width: @screen-xs) {}
+}
+
+// 使用移动端样式
+.mobile-style();

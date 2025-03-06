@@ -1,0 +1,28 @@
+# Vue Arco Project Robots.txt
+User-agent: *
+Allow: /
+
+# 禁止访问资源文件夹
+Disallow: /assets/
+
+# 允许主要搜索引擎完全访问
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Yisou Spider
+Allow: /
+
+# 站点地图位置
+Sitemap: https://yourdomain.com/sitemap.xml

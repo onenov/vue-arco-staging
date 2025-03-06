@@ -1,0 +1,38 @@
+:root {
+  font-family: Inter, "-apple-system", BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "noto sans", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#app {
+  height: 100%;
+}
+
+.page-header {  
+  width: 100%;
+}
+
+.no-drag {
+  user-select: none!important;
+  -webkit-user-select: none!important;
+  -moz-user-select: none!important;
+  -ms-user-select: none!important;
+}
+
+.overflow-auto {
+  overflow: auto; /* 允许滚动 */
+  scrollbar-width: none!important; /* Firefox 隐藏滚动条 */
+  -ms-overflow-style: none!important; /* IE 和 Edge 隐藏滚动条 */
+}
+
+/* Webkit 浏览器（Chrome, Safari）隐藏滚动条 */
+.overflow-auto::-webkit-scrollbar {
+  display: none!important;
+}

@@ -1,0 +1,44 @@
+{
+  "name": "vue-arco-project",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build --mode production",
+    "build:type-check": "vue-tsc -b && vite build --mode production",
+    "build:analyze": "vite build --mode production --debug",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@arco-design/web-vue": "^2.56.3",
+    "@tailwindcss/vite": "^4.0.9",
+    "@vueuse/motion": "^2.2.6",
+    "axios": "^1.8.1",
+    "dayjs": "^1.11.13",
+    "echarts": "^5.6.0",
+    "nprogress": "^0.2.0",
+    "pinia": "^3.0.1",
+    "vue": "^3.5.13",
+    "vue-lazyload": "^3.0.0",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.9",
+    "@types/node": "^22.13.9",
+    "@types/nprogress": "^0.2.3",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/tsconfig": "^0.7.0",
+    "autoprefixer": "^10.4.20",
+    "less": "^4.2.2",
+    "path": "^0.12.7",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.9",
+    "terser": "^5.39.0",
+    "typescript": "~5.7.2",
+    "unplugin-auto-import": "^19.1.1",
+    "unplugin-vue-components": "^28.4.1",
+    "vite": "^6.2.0",
+    "vue-tsc": "^2.2.4"
+  }
+}
