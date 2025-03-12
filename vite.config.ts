@@ -1,20 +1,20 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import tailwindcss from '@tailwindcss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ArcoResolver } from 'unplugin-vue-components/resolvers'
+import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(), 
-    tailwindcss(),
     AutoImport({
       imports: [
         'vue',
         'vue-router',
+        '@vueuse/core',
         'pinia',
         {
           '@arco-design/web-vue': [
@@ -35,6 +35,7 @@ export default defineConfig({
       dts: 'src/components.d.ts',
       dirs: ['src/components'],
     }),
+    vueDevTools(),
   ],
   css: {
     preprocessorOptions: {

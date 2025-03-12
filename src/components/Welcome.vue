@@ -62,7 +62,7 @@
         </div>
 
         <!-- 轮播容器 -->
-        <div class="overflow-hidden rounded-2xl" v-motion :initial="{ opacity: 0, y: 50 }"
+        <div class="overflow-hidden rounded-3xl" v-motion :initial="{ opacity: 0, y: 50 }"
           :enter="{ opacity: 1, y: 0, transition: { delay: 1400 } }">
           <div class="flex transition-transform duration-500 ease-in-out"
             :style="{ transform: `translateX(-${currentOffset}px)` }">
@@ -71,7 +71,7 @@
             <div v-for="(card, index) in cards" :key="index" class="flex-shrink-0 w-full md:max-w-lg mr-10">
               <div v-motion :initial="{ opacity: 0, scale: 0.9 }"
                 :enter="{ opacity: 1, scale: 1, transition: { delay: 1600 + (index * 100) } }">
-                <div class="relative mb-6 rounded-2xl overflow-hidden">
+                <div class="relative mb-6 rounded-3xl overflow-hidden">
                   <img class="block w-full h-72 object-cover no-drag" :src="card.image" :alt="card.title" />
                 </div>
                 <div class="max-w-xs sm:max-w-md">
@@ -92,7 +92,7 @@
 
       <div class="container mx-auto px-4 pb-20">
         <div v-for="(feature, index) in features" :key="feature.id"
-          :class="['mb-6 pb-10 pt-20 lg:pt-10 px-10 max-w-xl lg:max-w-none mx-auto bg-white rounded-4xl']" v-motion
+          :class="['mb-6 pb-10 pt-20 lg:pt-10 px-10 max-w-xl lg:max-w-none mx-auto bg-white rounded-3xl']" v-motion
           :initial="{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }"
           :enter="{ opacity: 1, x: 0, transition: { delay: 1800 + (index * 200) } }">
           <div class="flex flex-wrap -mx-4 items-center">
@@ -112,7 +112,7 @@
               'w-full',
               feature.reversed ? 'lg:w-5/12 order-first lg:order-first' : 'lg:w-5/12'
             ]">
-              <img class="block w-full rounded-4xl" :src="feature.image" :alt="feature.title" />
+              <img class="block w-full rounded-3xl" :src="feature.image" :alt="feature.title" />
             </div>
           </div>
         </div>
@@ -159,16 +159,16 @@
       </div>
 
       <div class="container mx-auto px-4 pb-20">
-        <div class="bg-white rounded-4xl overflow-hidden" v-motion :initial="{ opacity: 0, y: 100 }"
+        <div class="bg-white rounded-3xl overflow-hidden" v-motion :initial="{ opacity: 0, y: 100 }"
           :enter="{ opacity: 1, y: 0, transition: { delay: 2800 } }">
           <div class="flex flex-wrap -mx-4">
             <div class="w-full lg:w-1/2 px-4 order-last lg:order-first">
-              <img class="block aspect-[4/3] w-full object-cover rounded-4xl p-3"
+              <img class="block aspect-[4/3] w-full object-cover rounded-3xl p-3"
                 src="https://io.onenov.cn/file/202503060527317.png" alt="" />
             </div>
             <div class="w-full lg:w-1/2 px-4 self-center">
               <div class="py-12 px-8 mx-auto text-color">
-                <h2 class="font-heading text-4xl sm:text-4xl lg:text-5xl text-color tracking-tight mb-6 font-medium"
+                <h2 class="font-heading text-4xl sm:text-4xl text-color tracking-tight mb-6 font-medium"
                   v-motion :initial="{ opacity: 0, x: 50 }" :enter="{ opacity: 1, x: 0, transition: { delay: 3000 } }">
                   快速上手</h2>
                 <p class="text-lg mb-10" v-motion :initial="{ opacity: 0, x: 50 }"
@@ -383,6 +383,15 @@ onMounted(() => {
   position: relative;
   width: 100%;
   overflow: auto;
+  
+  /* 隐藏滚动条但保留滚动功能 */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Webkit浏览器 (Chrome, Safari) */
+.welcome-container::-webkit-scrollbar {
+  display: none;
 }
 
 .version-info {

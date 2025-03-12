@@ -12,6 +12,7 @@ declare module 'vue' {
     AButtonGroup: typeof import('@arco-design/web-vue')['ButtonGroup']
     APageHeader: typeof import('@arco-design/web-vue')['PageHeader']
     ASpace: typeof import('@arco-design/web-vue')['Space']
+    ASpin: typeof import('@arco-design/web-vue')['Spin']
     ATag: typeof import('@arco-design/web-vue')['Tag']
     Footer: typeof import('./components/layout/Footer.vue')['default']
     Header: typeof import('./components/layout/Header.vue')['default']

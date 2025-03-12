@@ -5,9 +5,12 @@ import App from './App.vue'
 import ArcoVue from '@arco-design/web-vue'
 import ArcoVueIcon from '@arco-design/web-vue/es/icon'; // 额外引入图标库
 import '@arco-design/web-vue/dist/arco.css'
+import 'md-editor-v3/lib/style.css';
+import 'md-editor-v3/lib/preview.css';
 
 // 引入@vueuse/motion动画库
 import { MotionPlugin } from '@vueuse/motion'
+
 
 // 引入样式文件
 import './tailwind.css'
