@@ -37,8 +37,14 @@ export default defineConfig({
       dts: 'src/components.d.ts',
       dirs: ['src/components'],
     }),
-    vueDevTools(),
-    compression(),
+    vueDevTools({
+      // 设置点击"在编辑器中打开"时使用的IDE
+      // 尝试使用Windsurf作为编辑器
+      // launchEditor: 'windsurf',
+    }),
+    compression({
+      algorithm: 'gzip',
+    }),
     visualizer({
       open: true, // 构建后自动打开分析报告
       filename: 'dist/stats.html', // 报告文件名
