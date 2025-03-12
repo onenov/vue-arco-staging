@@ -41,6 +41,8 @@ A modern front-end project template based on Vue 3, TypeScript, Vite, and Arco D
 - **Development Experience**: Hot updates, type hints, intelligent imports
 - **Static Build Optimization**: Pure static packaging, optimizing resource loading speed and volume
 - **SEO Friendly**: Optimized for search engine indexing
+- **Composition API Enhancement**: Integrated @vueuse/core providing rich composable functions
+- **Code Standards**: Integrated ESLint and Prettier to ensure code quality and consistency
 
 ## Directory Structure
 
@@ -112,6 +114,8 @@ The project is configured with efficient static resource build optimizations, in
 - **Resource Compression**: Uses ESBuild for code compression, reducing the final package size
 - **Static Resource Optimization**: Automatically processes images, fonts, and other static resources, organizing them by type
 - **Build Analysis**: Supports analyzing the build product volume composition via the `pnpm build:analyze` command
+- **Gzip Compression**: Automatically generates gzip compressed versions of static resources via vite-plugin-compression
+- **Bundle Analysis**: Integrated rollup-plugin-visualizer providing detailed build output analysis reports
 
 ## Internationalization Support
 
@@ -147,9 +151,38 @@ window.APP_CONFIG = {
 }
 ```
 
+## Development Tools Integration
+
+The project integrates rich development tools to enhance the development experience:
+
+### Vue DevTools
+
+Enhanced Vue development tools via vite-plugin-vue-devtools, allowing component inspection, state management, and more directly in the browser.
+
+### VueUse
+
+Integrated @vueuse/core, providing 100+ ready-to-use composition API functions, including:
+
+- State management: useStorage, useState, useLocalStorage
+- DOM operations: useMouse, useScroll, useWindowSize
+- Sensors: useDeviceOrientation, useGeolocation
+- Animation and time: useTransition, useTimeAgo
+- UI related: useColorMode, useDark
+- Network: useFetch, useWebSocket
+
+### Code Quality Tools
+
+- **ESLint**: Code standard checking to ensure code quality
+- **Prettier**: Code formatting to maintain consistent code style
+- **TypeScript**: Type checking, providing better code hints and error prevention
+
+### Markdown Support
+
+Integrated md-editor-v3, providing Markdown editing and preview functionality, suitable for document writing and content management.
+
 ## Lighthouse
 
-![](https://io.onenov.cn/file/202503060753605.png)
+![Lighthouse performance score screenshot](https://io.onenov.cn/file/202503060753605.png)
 
 ## Contribution Guidelines
 

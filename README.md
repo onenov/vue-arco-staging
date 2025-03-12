@@ -19,7 +19,6 @@
 <a href="./README.md"><img alt="简体中文版自述文件" src="https://img.shields.io/badge/简体中文-d9d9d9"></a>
 <a href="./README_EN.md"><img alt="README in English" src="https://img.shields.io/badge/English-d9d9d9"></a>
 
-
 </div>
 
 ![screenshot](https://io.onenov.cn/file/202503060754949.png)
@@ -41,6 +40,8 @@
 - **开发体验**：热更新、类型提示、智能导入
 - **静态构建优化**：纯静态打包，优化资源加载速度和体积
 - **SEO 友好**：优化搜索引擎收录
+- **组合式 API 增强**：集成 @vueuse/core 提供丰富的组合式函数
+- **代码规范**：集成 ESLint 和 Prettier 确保代码质量和一致性
 
 ## 目录结构
 
@@ -112,6 +113,8 @@ pnpm preview
 - **资源压缩**：使用ESBuild进行代码压缩，减小最终打包体积
 - **静态资源优化**：自动处理图片、字体等静态资源，按类型分目录存放
 - **构建分析**：支持通过`pnpm build:analyze`命令分析构建产物的体积构成
+- **Gzip 压缩**：通过 vite-plugin-compression 自动生成静态资源的 gzip 压缩版本
+- **打包分析**：集成 rollup-plugin-visualizer 提供详细的构建产物分析报告
 
 ## 国际化支持
 
@@ -147,9 +150,38 @@ window.APP_CONFIG = {
 }
 ```
 
+## 开发工具集成
+
+项目集成了丰富的开发工具提升开发体验：
+
+### Vue DevTools
+
+通过 vite-plugin-vue-devtools 提供增强的 Vue 开发工具，可直接在浏览器中进行组件检查、状态管理等操作。
+
+### VueUse
+
+集成 @vueuse/core，提供 100+ 即用型的组合式 API，包括：
+
+- 状态管理：useStorage, useState, useLocalStorage
+- DOM 操作：useMouse, useScroll, useWindowSize
+- 传感器：useDeviceOrientation, useGeolocation
+- 动画与时间：useTransition, useTimeAgo
+- UI 相关：useColorMode, useDark
+- 网络：useFetch, useWebSocket
+
+### 代码质量工具
+
+- **ESLint**：代码规范检查，确保代码质量
+- **Prettier**：代码格式化，保持代码风格一致性
+- **TypeScript**：类型检查，提供更好的代码提示和错误预防
+
+### Markdown 支持
+
+集成 md-editor-v3，提供 Markdown 编辑和预览功能，适合文档编写和内容管理。
+
 ## Lighthouse
 
-![](https://io.onenov.cn/file/202503060753605.png)
+![Lighthouse性能评分截图](https://io.onenov.cn/file/202503060753605.png)
 
 ## 贡献指南
 

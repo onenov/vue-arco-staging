@@ -26,5 +26,25 @@ dist-ssr
 # 忽略自动生成的文件
 /src/types/auto-imports.d.ts
 /src/types/components.d.ts
+/src/auto-imports.d.ts
+/src/components.d.ts
 node_modules/
 pnpm-lock.yaml
+
+# ESLint相关
+.eslintcache
+
+# 打包分析报告
+stats.html
+dist/stats.html
+bundle-analyzer-report.html
+
+# 代码覆盖率报告
+coverage/
+
+# Vite相关
+.vite/
+
+# 环境变量文件
+.env.local
+.env.*.local

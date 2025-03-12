@@ -5,6 +5,8 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ArcoResolver } from 'unplugin-vue-components/resolvers'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import compression from 'vite-plugin-compression'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -36,6 +38,13 @@ export default defineConfig({
       dirs: ['src/components'],
     }),
     vueDevTools(),
+    compression(),
+    visualizer({
+      open: true, // 构建后自动打开分析报告
+      filename: 'dist/stats.html', // 报告文件名
+      gzipSize: true, // 显示gzip大小
+      brotliSize: true, // 显示brotli大小
+    }),
   ],
   css: {
     preprocessorOptions: {
