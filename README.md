@@ -18,7 +18,7 @@
 
 </div>
 
-![screenshot](https://io.onenov.cn/file/202503060754949.png)
+![screenshot](https://io.onenov.cn/file/202504071900388.png)
 
 ## 主要特性
 
