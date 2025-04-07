@@ -207,10 +207,6 @@ window.APP_CONFIG = {
 - **FlyonUI**：提供额外的UI组件支持
 - **Arco Design**：全面的企业级UI组件库
 
-## Lighthouse
-
-![Lighthouse性能评分截图](https://io.onenov.cn/file/202503060753605.png)
-
 ## 贡献指南
 
 如果您想为此项目做出贡献，请遵循以下步骤：
