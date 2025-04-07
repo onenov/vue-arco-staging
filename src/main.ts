@@ -1,55 +1,32 @@
 import { createApp } from 'vue'
-import App from './App.vue'
-
-// 引入Arco Design
+import { createPinia } from 'pinia'
 import ArcoVue from '@arco-design/web-vue'
-import ArcoVueIcon from '@arco-design/web-vue/es/icon'; // 额外引入图标库
-import '@arco-design/web-vue/dist/arco.css'
-import 'md-editor-v3/lib/style.css';
-import 'md-editor-v3/lib/preview.css';
-
-// 引入@vueuse/motion动画库
+import ArcoVueIcon from '@arco-design/web-vue/es/icon';
+import { install as IconParkInstall } from '@icon-park/vue-next/es/all';
 import { MotionPlugin } from '@vueuse/motion'
 
-
-// 引入样式文件
-import './tailwind.css'
-import './assets/style/style.less'
-import './assets/style/light.less'
-import './assets/style/dark.less'
-import './assets/style/mobile.less' 
-
-// 引入路由
 import router from './router'
 
-// 引入状态管理
-import { createPinia } from 'pinia'
+// 导入样式文件
+import './assets/css/main.css'
+import './assets/css/light.less'
+import './assets/css/dark.less'
+import '@arco-design/web-vue/dist/arco.css'
+import './assets/css/style.less'
+import './assets/css/mobile.less'
 
-// 创建应用实例和状态管理实例
+import App from './App.vue'
+
 const app = createApp(App)
-const pinia = createPinia()
 
-// 注册Arco Design组件库
-app.use(ArcoVue)
-app.use(ArcoVueIcon) // 额外注册图标库
-
-// 注册动画库
+// 使用插件
+app.use(createPinia())
+app.use(router)
+app.use(ArcoVue as any);
+app.use(ArcoVueIcon as any);
+// 安装IconPark图标
+IconParkInstall(app, 'i');
+// 安装Motion动画插件
 app.use(MotionPlugin)
 
-// 注册路由
-app.use(router)
-
-// 注册状态管理
-app.use(pinia)
-
-// 确保在挂载应用之前载入配置
-import { useConfigStore, useThemeStore } from './store'
-const configStore = useConfigStore()
-configStore.loadConfig()
-
-// 主题初始化
-const themeStore = useThemeStore()
-themeStore.initTheme()
-
-// 挂载应用
 app.mount('#app')

@@ -1,0 +1,23 @@
+{
+    "about": {
+        "title": "关于",
+        "description": "Vue Arco Project是一个基于Vue 3、Vite和Arco Design的现代化前端应用框架，提供了丰富的UI组件和便捷的开发体验，帮助开发者快速构建高品质的Web应用。",
+        "buttonText": "立即体验",
+        "buttonLink": "/exam",
+        "testimonials": [
+            {
+                "text": "我们的使命是让学习变得更智能、更高效。通过整合OCR识别和AI分析技术，我们为学生和教师提供直观易用的试卷分析工具，让复杂的学习过程变得简单而有趣。",
+                "avatar": "https://io.onenov.cn/file/202502141528274.png",
+                "buttonText": "联系",
+                "useAuthorName": true
+            },
+            {
+                "text": "一站式 AI 智能体搭建平台，聚合多模态大模型、知识库、插件和工作流等 Agent 构建能力，致力于为用户提供 LLM 大语言模型落地应用的强大在线平台。",
+                "avatar": "https://orence.net/pwa-512x512.png",
+                "buttonText": "官网",
+                "buttonLink": "CONFIG_FOOTER_URL",
+                "useConfigDescription": true
+            }
+        ]
+    }
+}

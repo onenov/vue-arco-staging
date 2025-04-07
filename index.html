@@ -1,41 +1,54 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue Arco Project</title>
-    <!-- 添加全局配置文件 -->
-    <script src="/config.js"></script>
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="" id="meta-description">
-    <meta name="keywords" content="" id="meta-keywords">
-    <!-- 动态更新SEO标签 -->
-    <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        if (window.APP_CONFIG) {
-          // 更新页面标题
-          document.title = window.APP_CONFIG.APP_NAME || 'Vue Arco Project';
-          // 更新favicon
-          if (window.APP_CONFIG.APP_ICON) {
-            const favicon = document.querySelector('link[rel="icon"]');
-            if (favicon) favicon.href = window.APP_CONFIG.APP_ICON;
-          }
-          // 更新SEO元标签
-          const descriptionMeta = document.getElementById('meta-description');
-          if (descriptionMeta && window.APP_CONFIG.APP_DESCRIPTION) {
-            descriptionMeta.setAttribute('content', window.APP_CONFIG.APP_DESCRIPTION);
-          }
-          const keywordsMeta = document.getElementById('meta-keywords');
-          if (keywordsMeta && window.APP_CONFIG.APP_KEYWORDS) {
-            keywordsMeta.setAttribute('content', window.APP_CONFIG.APP_KEYWORDS);
-          }
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,  user-scalable=no, viewport-fit=cover" />
+  <meta name="language" content="zh-CN" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta http-equiv="Accept-CH"
+    content="Sec-CH-UA-Arch, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Bitness, Sec-CH-UA-Wow64" />
+  <!-- 添加全局配置文件 -->
+  <script src="/config.js"></script>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="" id="meta-description" />
+  <meta name="keywords" content="" id="meta-keywords" />
+  <!-- 动态更新SEO标签 -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      if (window.APP_CONFIG) {
+        // 更新页面标题
+        document.title = window.APP_CONFIG.APP_NAME;
+        // 更新favicon
+        if (window.APP_CONFIG.APP_ICON) {
+          const favicon = document.querySelector('link[rel="icon"]');
+          if (favicon) favicon.href = window.APP_CONFIG.APP_ICON;
         }
-      });
-    </script>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+        // 更新SEO元标签
+        const descriptionMeta = document.getElementById("meta-description");
+        if (descriptionMeta && window.APP_CONFIG.APP_DESCRIPTION) {
+          descriptionMeta.setAttribute(
+            "content",
+            window.APP_CONFIG.APP_DESCRIPTION
+          );
+        }
+        const keywordsMeta = document.getElementById("meta-keywords");
+        if (keywordsMeta && window.APP_CONFIG.APP_KEYWORDS) {
+          keywordsMeta.setAttribute(
+            "content",
+            window.APP_CONFIG.APP_KEYWORDS
+          );
+        }
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>

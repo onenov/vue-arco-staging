@@ -12,12 +12,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch } from 'vue';
-import { useThemeStore } from '@/store';
-import { Message } from '@arco-design/web-vue';
+import { useThemeStore } from '@/store/theme';
 
-// 使用主题存储
 const themeStore = useThemeStore();
+
+import { Message } from '@arco-design/web-vue';
 
 // 系统主题变化事件处理函数
 const handleSystemThemeChange = (e: MediaQueryListEvent) => {

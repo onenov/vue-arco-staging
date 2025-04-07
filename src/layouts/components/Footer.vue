@@ -1,36 +1,29 @@
 <template>
-  <footer class="container mx-auto w-full flex items-center justify-center">
-    <div class="flex flex-wrap my-4">
-      <a-space>
-        <a-button type="secondary" size="mini">Copyright {{ configStore.config.FOOTER_COPYRIGHT }}
-          {{ currentYear }}</a-button>
-        <a-button type="secondary" size="mini" v-if="configStore.config.ICP_RECORD" @click="openIcpLink">{{
-          configStore.config.ICP_RECORD }}</a-button>
-        <a-button type="secondary" size="mini" v-if="configStore.config.FOOTER__DESCRIPTION">{{
-          configStore.config.FOOTER__DESCRIPTION }}</a-button>
-        <a-tag color="gray" @click="openGithub">
-          <template #icon>
-            <icon-github />
-          </template>
-          Github
-        </a-tag>
-        <a-button type="secondary" shape="circle" size="mini" @click="showDataRepairConfirm">
-          <icon-tool />
-        </a-button>
+  <footer class="container mx-auto w-full py-4 px-4">
+    <div class="flex flex-wrap justify-center items-center gap-2">
+      <a-button type="dashed" size="mini">Copyright {{ appConfig.FOOTER_COPYRIGHT }}
+        {{ currentYear }}</a-button>
+      <a-button type="dashed" size="mini" v-if="appConfig.ICP_RECORD" @click="openIcpLink">{{
+        appConfig.ICP_RECORD }}</a-button>
+      <a-button type="dashed" size="mini" v-if="appConfig.FOOTER_DESCRIPTION"
+        @click="openFooterDescription">{{
+          appConfig.FOOTER_DESCRIPTION }}</a-button>
 
-      </a-space>
+      <a-button type="dashed" shape="circle" size="mini" @click="showDataRepairConfirm">
+        <icon-tool />
+      </a-button>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-import { useConfigStore } from '@/store';
 import { Modal, Message } from '@arco-design/web-vue';
 import { useRouter } from 'vue-router';
 
-const configStore = useConfigStore();
+// 使用类型断言引入全局配置
+const appConfig = window.APP_CONFIG as any;
+
 const router = useRouter();
-configStore.loadConfig();
 
 const currentYear = new Date().getFullYear();
 
@@ -39,16 +32,16 @@ const openIcpLink = () => {
   window.open('https://beian.miit.gov.cn/', '_blank');
 };
 
-// 点击Github跳转到Github
-const openGithub = () => {
-  window.open('https://github.com/onenov/vue-arco-staging', '_blank');
+// 点击页脚描述跳转到页脚描述页面
+const openFooterDescription = () => {
+  window.open(appConfig.FOOTER_DESCRIPTION_URL, '_blank');
 };
 
 // 显示数据修复确认
 const showDataRepairConfirm = () => {
   Modal.warning({
-    title: '数据修复',
-    content: '您确认要删除所有本地数据并重新登录吗？这将删除所有缓存状态和重新返回首页。',
+    title: '数据清除',
+    content: '您确认要删除所有本地数据并重置状态吗？',
     okText: '确认',
     cancelText: '取消',
     onOk: executeDataRepair
@@ -93,6 +86,10 @@ const executeDataRepair = () => {
     Message.error('数据删除失败，请重新加载页面');
   }
 };
+
+defineOptions({
+  name: 'Footer'
+})
 </script>
 
 <style scoped lang="less"></style>

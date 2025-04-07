@@ -34,11 +34,6 @@ pnpm-lock.yaml
 # ESLint相关
 .eslintcache
 
-# 打包分析报告
-stats.html
-dist/stats.html
-bundle-analyzer-report.html
-
 # 代码覆盖率报告
 coverage/
 

@@ -1,0 +1,119 @@
+:root {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 添加柔和的主题切换过渡效果 */
+body, 
+#app, 
+.container, 
+.card,
+.bg-white,
+.bg-gray-100,
+.bg-gray-200,
+.text-gray-800,
+.text-gray-600,
+.text-gray-500,
+.border-gray-200 {
+    transition: background-color 0.5s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-feature-settings: normal;
+    font-weight: normal;
+    font-synthesis: none;
+    font-variation-settings: normal;
+    text-rendering: optimizeLegibility;
+    background-color: var(--color-bg-1);
+}
+
+#app {
+    height: 100%;
+}
+
+.overflow-auto {
+    overflow: auto;
+    /* 允许滚动 */
+    scrollbar-width: none !important;
+    /* Firefox 隐藏滚动条 */
+    -ms-overflow-style: none !important;
+    /* IE 和 Edge 隐藏滚动条 */
+}
+
+/* Webkit 浏览器（Chrome, Safari）隐藏滚动条 */
+.overflow-auto::-webkit-scrollbar {
+    display: none !important;
+}
+
+
+img {
+    user-select: none;
+    /* 禁止选中 */
+    -webkit-user-select: none;
+    /* 兼容 WebKit 浏览器 */
+    -moz-user-select: none;
+    /* 兼容 Firefox */
+    -ms-user-select: none;
+    /* 兼容 IE/Edge */
+}
+
+img {
+    user-drag: none;
+    /* 禁止拖动 */
+    -webkit-user-drag: none;
+    /* 兼容 WebKit 浏览器（如 Chrome、Safari） */
+}
+
+.mobile-hidden {
+    @media (max-width: 768px) {
+        display: none !important;
+    }
+}
+
+.pc-hidden {
+    @media (min-width: 769px) {
+        display: none !important;
+    }
+}
+
+.page-header {
+    width: 100%;
+}
+
+.header-blur {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.5);
+    // border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.arco-page-header {
+    padding: 10px 0 !important;
+}
+
+.clean-header {
+    .arco-page-header-wrapper {
+        padding: 0 !important;
+    }
+}
+
+.index-header {
+    .arco-page-header-wrapper {
+        padding:  0 10px !important;
+    }
+}
+
+.md-editor{
+    background-color: transparent !important;
+}
+
+svg.md-editor-icon{
+    padding: 0 !important;
+}
+
+.arco-btn{
+    flex-shrink: 0;
+}
